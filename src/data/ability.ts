@@ -2406,8 +2406,9 @@ export function initAbilities() {
     new Ability(Abilities.SNIPER, "Sniper (N)", "Powers up moves if they become critical hits when attacking.", 4),
     new Ability(Abilities.MAGIC_GUARD, "Magic Guard", "The Pokémon only takes damage from attacks.", 4)
       .attr(BlockNonDirectDamageAbAttr),
-    new Ability(Abilities.NO_GUARD, "No Guard", "The Pokémon employs no-guard tactics to ensure incoming and outgoing attacks always land.", 4),
-      .attr(BattleStatMultiplierAbAttr, BattleStat.ACC, -1),
+    new Ability(Abilities.NO_GUARD (P), "No Guard", "The Pokémon employs no-guard tactics to ensure incoming and outgoing attacks always land.", 4)
+      .attr(BattleStatMultiplierAbAttr, BattleStat.ACC, 150)
+      .attr(BattleStatMultiplierAbAttr, BattleStat.EVA, 0)
     new Ability(Abilities.STALL, "Stall (N)", "The Pokémon moves after all other Pokémon do.", 4),
     new Ability(Abilities.TECHNICIAN, "Technician", "Powers up the Pokémon's weaker moves.", 4)
       .attr(MovePowerBoostAbAttr, (user, target, move) => move.power <= 60, 1.5),
@@ -2905,7 +2906,8 @@ export function initAbilities() {
     new Ability(Abilities.EARTH_EATER, "Earth Eater", "If hit by a Ground-type move, the Pokémon has its HP restored instead of taking damage.", 9)
       .attr(TypeImmunityHealAbAttr, Type.GROUND)
       .ignorable(),
-    new Ability(Abilities.MYCELIUM_MIGHT, "Mycelium Might (N)", "The Pokémon will always act more slowly when using status moves, but these moves will be unimpeded by the Ability of the target.", 9),
+    new Ability(Abilities.MYCELIUM_MIGHT, "Mycelium Might (P)", "The Pokémon will always act more slowly when using status moves, but these moves will be unimpeded by the Ability of the target.", 9)
+      .attr(MoveAbilityBypassAbAttr),
     new Ability(Abilities.MINDS_EYE, "Mind's Eye (N)", "The Pokémon ignores changes to opponents' evasiveness, its accuracy can't be lowered, and it can hit Ghost types with Normal- and Fighting-type moves.", 9)
       .ignorable(),
     new Ability(Abilities.SUPERSWEET_SYRUP, "Supersweet Syrup (N)", "A sickly sweet scent spreads across the field the first time the Pokémon enters a battle, lowering the evasiveness of opposing Pokémon.", 9),
