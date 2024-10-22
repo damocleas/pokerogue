@@ -1760,7 +1760,7 @@ const modifierPool: ModifierPool = {
     new WeightedModifierType(modifierTypes.CANDY_JAR, skipInLastClassicWaveOrDefault(5)),
     new WeightedModifierType(modifierTypes.ATTACK_TYPE_BOOSTER, 9),
     new WeightedModifierType(modifierTypes.TM_ULTRA, 11),
-    new WeightedModifierType(modifierTypes.RARER_CANDY, 4),
+    new WeightedModifierType(modifierTypes.RARER_CANDY, 6),
     new WeightedModifierType(modifierTypes.GOLDEN_PUNCH, skipInLastClassicWaveOrDefault(2)),
     new WeightedModifierType(modifierTypes.IV_SCANNER, skipInLastClassicWaveOrDefault(4)),
     new WeightedModifierType(modifierTypes.EXP_CHARM, skipInLastClassicWaveOrDefault(8)),
