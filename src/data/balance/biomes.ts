@@ -42,7 +42,7 @@ export const biomeLinks: BiomeLinks = {
   [BiomeId.FOREST]: [ BiomeId.JUNGLE, BiomeId.MEADOW ],
   [BiomeId.SEA]: [ BiomeId.SEABED, BiomeId.ICE_CAVE ],
   [BiomeId.SWAMP]: [ BiomeId.GRAVEYARD, BiomeId.TALL_GRASS ],
-  [BiomeId.BEACH]: [ BiomeId.SEA, [ BiomeId.ISLAND, 2 ]],
+  [BiomeId.BEACH]: [ BiomeId.SEA, [BiomeId.ROCKY_COAST, 2], [ BiomeId.ISLAND, 2 ]],
   [BiomeId.LAKE]: [ BiomeId.BEACH, BiomeId.SWAMP, BiomeId.CONSTRUCTION_SITE ],
   [BiomeId.SEABED]: [ BiomeId.CAVE, [ BiomeId.VOLCANO, 3 ]],
   [BiomeId.MOUNTAIN]: [ BiomeId.VOLCANO, [ BiomeId.WASTELAND, 2 ], [ BiomeId.SPACE, 3 ]],
@@ -67,7 +67,8 @@ export const biomeLinks: BiomeLinks = {
   [BiomeId.METROPOLIS]: BiomeId.SLUM,
   [BiomeId.SNOWY_FOREST]: [ BiomeId.FOREST, [ BiomeId.MOUNTAIN, 2 ], [ BiomeId.LAKE, 2 ]],
   [BiomeId.ISLAND]: BiomeId.SEA,
-  [BiomeId.LABORATORY]: BiomeId.CONSTRUCTION_SITE
+  [BiomeId.LABORATORY]: BiomeId.CONSTRUCTION_SITE,
+  [BiomeId.ROCKY_COAST]: [ BiomeId.MOUNTAIN, BiomeId.SEA ]
 };
 
 export const biomeDepths: BiomeDepths = {};
@@ -1602,6 +1603,42 @@ export const biomePokemonPools: BiomePokemonPools = {
     [BiomePoolTier.BOSS_SUPER_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [ SpeciesId.ROTOM, SpeciesId.ZYGARDE, SpeciesId.SILVALLY ]},
     [BiomePoolTier.BOSS_ULTRA_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [ SpeciesId.MEWTWO, SpeciesId.MIRAIDON ]}
   },
+    [BiomeId.ROCKY_COAST]: {
+    [BiomePoolTier.COMMON]: {
+      [TimeOfDay.DAWN]: [{ 1: [ SpeciesId.STARYU ], 30: [ SpeciesId.STARMIE ]}],
+      [TimeOfDay.DAY]: [{ 1: [ SpeciesId.STARYU ], 30: [ SpeciesId.STARMIE ]}],
+      [TimeOfDay.DUSK]: [ SpeciesId.SHELLDER ],
+      [TimeOfDay.NIGHT]: [ SpeciesId.SHELLDER ],
+      [TimeOfDay.ALL]: [
+        { 1: [ SpeciesId.KRABBY ], 28: [ SpeciesId.KINGLER ]},
+        { 1: [ SpeciesId.CORPHISH ], 30: [ SpeciesId.CRAWDAUNT ]},
+        { 1: [ SpeciesId.DWEBBLE ], 34: [ SpeciesId.CRUSTLE ]},
+        { 1: [ SpeciesId.BINACLE ], 39: [ SpeciesId.BARBARACLE ]},
+        { 1: [ SpeciesId.MAREANIE ], 38: [ SpeciesId.TOXAPEX ]},
+        { 1: [ SpeciesId.WIGLETT ], 26: [ SpeciesId.WUGTRIO ]}
+      ]
+    },
+    [BiomePoolTier.UNCOMMON]: {
+      [TimeOfDay.DAWN]: [],
+      [TimeOfDay.DAY]: [],
+      [TimeOfDay.DUSK]: [],
+      [TimeOfDay.NIGHT]: [],
+      [TimeOfDay.ALL]: [{ 1: [ SpeciesId.BURMY ], 20: [ SpeciesId.WORMADAM ]}, { 1: [ SpeciesId.CLAUNCHER ], 37: [ SpeciesId.CLAWITZER ]}, { 1: [ SpeciesId.SANDYGAST ], 42: [ SpeciesId.PALOSSAND ]}]
+    },
+    [BiomePoolTier.RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [{ 1: [ SpeciesId.QUAXLY ], 16: [ SpeciesId.QUAXWELL ], 36: [ SpeciesId.QUAQUAVAL ]}, SpeciesId.TATSUGIRI ]},
+    [BiomePoolTier.SUPER_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [{ 1: [ SpeciesId.TIRTOUGA ], 37: [ SpeciesId.CARRACOSTA ]}]},
+    [BiomePoolTier.ULTRA_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [ SpeciesId.CRESSELIA, SpeciesId.KELDEO, SpeciesId.TAPU_FINI ]},
+    [BiomePoolTier.BOSS]: {
+      [TimeOfDay.DAWN]: [ SpeciesId.STARMIE ],
+      [TimeOfDay.DAY]: [ SpeciesId.STARMIE ],
+      [TimeOfDay.DUSK]: [ SpeciesId.CLOYSTER ],
+      [TimeOfDay.NIGHT]: [ SpeciesId.CLOYSTER ],
+      [TimeOfDay.ALL]: [ SpeciesId.KINGLER, SpeciesId.CRAWDAUNT, SpeciesId.WORMADAM, SpeciesId.CRUSTLE, SpeciesId.BARBARACLE, SpeciesId.CLAWITZER, SpeciesId.TOXAPEX, SpeciesId.PALOSSAND ]
+    },
+    [BiomePoolTier.BOSS_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [ SpeciesId.CARRACOSTA, SpeciesId.QUAQUAVAL ]},
+    [BiomePoolTier.BOSS_SUPER_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: [ SpeciesId.CRESSELIA, SpeciesId.KELDEO, SpeciesId.TAPU_FINI ]},
+    [BiomePoolTier.BOSS_ULTRA_RARE]: { [TimeOfDay.DAWN]: [], [TimeOfDay.DAY]: [], [TimeOfDay.DUSK]: [], [TimeOfDay.NIGHT]: [], [TimeOfDay.ALL]: []}
+  },
   [BiomeId.END]: {
     [BiomePoolTier.COMMON]: {
       [TimeOfDay.DAWN]: [],
@@ -2005,6 +2042,17 @@ export const biomeTrainerPools: BiomeTrainerPools = {
     [BiomePoolTier.SUPER_RARE]: [],
     [BiomePoolTier.ULTRA_RARE]: [],
     [BiomePoolTier.BOSS]: [ TrainerType.GIOVANNI ],
+    [BiomePoolTier.BOSS_RARE]: [],
+    [BiomePoolTier.BOSS_SUPER_RARE]: [],
+    [BiomePoolTier.BOSS_ULTRA_RARE]: []
+  },
+    [BiomeId.ROCKY_COAST]: {
+    [BiomePoolTier.COMMON]: [ TrainerType.FISHERMAN, TrainerType.SAILOR ],
+    [BiomePoolTier.UNCOMMON]: [ TrainerType.ACE_TRAINER, TrainerType.BREEDER ],
+    [BiomePoolTier.RARE]: [ TrainerType.BLACK_BELT ],
+    [BiomePoolTier.SUPER_RARE]: [],
+    [BiomePoolTier.ULTRA_RARE]: [],
+    [BiomePoolTier.BOSS]: [ TrainerType.MISTY, TrainerType.KOFU ],
     [BiomePoolTier.BOSS_RARE]: [],
     [BiomePoolTier.BOSS_SUPER_RARE]: [],
     [BiomePoolTier.BOSS_ULTRA_RARE]: []
@@ -2477,11 +2525,13 @@ export function initBiomes() {
     [ SpeciesId.SHELLDER, PokemonType.WATER, -1, [
       [ BiomeId.SEA, BiomePoolTier.UNCOMMON, [ TimeOfDay.DUSK, TimeOfDay.NIGHT ]],
       [ BiomeId.BEACH, BiomePoolTier.COMMON, [ TimeOfDay.DUSK, TimeOfDay.NIGHT ]],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON, [ TimeOfDay.DUSK, TimeOfDay.NIGHT ]],
       [ BiomeId.SEABED, BiomePoolTier.UNCOMMON ]
     ]
     ],
     [ SpeciesId.CLOYSTER, PokemonType.WATER, PokemonType.ICE, [
-      [ BiomeId.BEACH, BiomePoolTier.BOSS, [ TimeOfDay.DUSK, TimeOfDay.NIGHT ]]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS, [ TimeOfDay.DUSK, TimeOfDay.NIGHT ]],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS, [ TimeOfDay.DUSK, TimeOfDay.NIGHT ]]
     ]
     ],
     [ SpeciesId.GASTLY, PokemonType.GHOST, PokemonType.POISON, [
@@ -2515,12 +2565,15 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.KRABBY, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ SpeciesId.KINGLER, PokemonType.WATER, -1, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ SpeciesId.VOLTORB, PokemonType.ELECTRIC, -1, [
@@ -2635,12 +2688,15 @@ export function initBiomes() {
     ],
     [ SpeciesId.STARYU, PokemonType.WATER, -1, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON, [ TimeOfDay.DAWN, TimeOfDay.DAY ]],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON, [ TimeOfDay.DAWN, TimeOfDay.DAY ]],
       [ BiomeId.SEA, BiomePoolTier.UNCOMMON, [ TimeOfDay.DAWN, TimeOfDay.DAY ]]
     ]
     ],
     [ SpeciesId.STARMIE, PokemonType.WATER, PokemonType.PSYCHIC, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON, [ TimeOfDay.DAWN, TimeOfDay.DAY ]],
       [ BiomeId.BEACH, BiomePoolTier.BOSS, [ TimeOfDay.DAWN, TimeOfDay.DAY ]],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON, [ TimeOfDay.DAWN, TimeOfDay.DAY ]],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS, [ TimeOfDay.DAWN, TimeOfDay.DAY ]],
       [ BiomeId.SEA, BiomePoolTier.UNCOMMON, [ TimeOfDay.DAWN, TimeOfDay.DAY ]]
     ]
     ],
@@ -3695,12 +3751,15 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.CORPHISH, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ SpeciesId.CRAWDAUNT, PokemonType.WATER, PokemonType.DARK, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ SpeciesId.BALTOY, PokemonType.GROUND, PokemonType.PSYCHIC, [
@@ -4023,6 +4082,7 @@ export function initBiomes() {
     [ SpeciesId.BURMY, PokemonType.BUG, -1, [
       [ BiomeId.FOREST, BiomePoolTier.UNCOMMON ],
       [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ],
       [ BiomeId.SLUM, BiomePoolTier.UNCOMMON ]
     ]
     ],
@@ -4031,6 +4091,8 @@ export function initBiomes() {
       [ BiomeId.FOREST, BiomePoolTier.BOSS ],
       [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
       [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ],
       [ BiomeId.SLUM, BiomePoolTier.UNCOMMON ],
       [ BiomeId.SLUM, BiomePoolTier.BOSS ]
     ]
@@ -4390,7 +4452,9 @@ export function initBiomes() {
     ],
     [ SpeciesId.CRESSELIA, PokemonType.PSYCHIC, -1, [
       [ BiomeId.BEACH, BiomePoolTier.ULTRA_RARE ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS_SUPER_RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS_SUPER_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.ULTRA_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS_SUPER_RARE ]
     ]
     ],
     [ SpeciesId.PHIONE, PokemonType.WATER, -1, [ ]
@@ -4724,12 +4788,15 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.DWEBBLE, PokemonType.BUG, PokemonType.ROCK, [
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ SpeciesId.CRUSTLE, PokemonType.BUG, PokemonType.ROCK, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ SpeciesId.SCRAGGY, PokemonType.DARK, PokemonType.FIGHTING, [
@@ -4762,13 +4829,16 @@ export function initBiomes() {
     ],
     [ SpeciesId.TIRTOUGA, PokemonType.WATER, PokemonType.ROCK, [
       [ BiomeId.SEA, BiomePoolTier.SUPER_RARE ],
-      [ BiomeId.BEACH, BiomePoolTier.SUPER_RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.SUPER_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.SUPER_RARE ]
     ]
     ],
     [ SpeciesId.CARRACOSTA, PokemonType.WATER, PokemonType.ROCK, [
       [ BiomeId.SEA, BiomePoolTier.SUPER_RARE ],
       [ BiomeId.BEACH, BiomePoolTier.SUPER_RARE ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS_RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.SUPER_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS_RARE ]
     ]
     ],
     [ SpeciesId.ARCHEN, PokemonType.ROCK, PokemonType.FLYING, [
@@ -5156,7 +5226,9 @@ export function initBiomes() {
     ],
     [ SpeciesId.KELDEO, PokemonType.WATER, PokemonType.FIGHTING, [
       [ BiomeId.BEACH, BiomePoolTier.ULTRA_RARE ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS_SUPER_RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS_SUPER_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.ULTRA_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS_SUPER_RARE ]
     ]
     ],
     [ SpeciesId.MELOETTA, PokemonType.NORMAL, PokemonType.PSYCHIC, [
@@ -5342,12 +5414,15 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.BINACLE, PokemonType.ROCK, PokemonType.WATER, [
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ SpeciesId.BARBARACLE, PokemonType.ROCK, PokemonType.WATER, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ SpeciesId.SKRELP, PokemonType.POISON, PokemonType.WATER, [
@@ -5360,12 +5435,15 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.CLAUNCHER, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ]
     ]
     ],
     [ SpeciesId.CLAWITZER, PokemonType.WATER, -1, [
       [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ SpeciesId.HELIOPTILE, PokemonType.ELECTRIC, PokemonType.NORMAL, [
@@ -5616,12 +5694,15 @@ export function initBiomes() {
     ],
     [ SpeciesId.MAREANIE, PokemonType.POISON, PokemonType.WATER, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ],
       [ BiomeId.SWAMP, BiomePoolTier.UNCOMMON ]
     ]
     ],
     [ SpeciesId.TOXAPEX, PokemonType.POISON, PokemonType.WATER, [
       [ BiomeId.BEACH, BiomePoolTier.COMMON ],
       [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ],
       [ BiomeId.SWAMP, BiomePoolTier.UNCOMMON ],
       [ BiomeId.SWAMP, BiomePoolTier.BOSS ]
     ]
@@ -5719,12 +5800,15 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.SANDYGAST, PokemonType.GHOST, PokemonType.GROUND, [
-      [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ]
     ]
     ],
     [ SpeciesId.PALOSSAND, PokemonType.GHOST, PokemonType.GROUND, [
       [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ SpeciesId.PYUKUMUKU, PokemonType.WATER, -1, [
@@ -5810,7 +5894,9 @@ export function initBiomes() {
     ],
     [ SpeciesId.TAPU_FINI, PokemonType.WATER, PokemonType.FAIRY, [
       [ BiomeId.BEACH, BiomePoolTier.ULTRA_RARE ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS_SUPER_RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS_SUPER_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.ULTRA_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS_SUPER_RARE ]
     ]
     ],
     [ SpeciesId.COSMOG, PokemonType.PSYCHIC, -1, [
@@ -6364,16 +6450,20 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.QUAXLY, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.RARE ]
     ]
     ],
     [ SpeciesId.QUAXWELL, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.RARE ]
     ]
     ],
     [ SpeciesId.QUAQUAVAL, PokemonType.WATER, PokemonType.FIGHTING, [
       [ BiomeId.BEACH, BiomePoolTier.RARE ],
-      [ BiomeId.BEACH, BiomePoolTier.BOSS_RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS_RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS_RARE ]
     ]
     ],
     [ SpeciesId.LECHONK, PokemonType.NORMAL, -1, [
@@ -6593,11 +6683,13 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.WIGLETT, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ SpeciesId.WUGTRIO, PokemonType.WATER, -1, [
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ SpeciesId.BOMBIRDIER, PokemonType.FLYING, PokemonType.DARK, [
@@ -6674,7 +6766,8 @@ export function initBiomes() {
     ]
     ],
     [ SpeciesId.TATSUGIRI, PokemonType.DRAGON, PokemonType.WATER, [
-      [ BiomeId.BEACH, BiomePoolTier.RARE ]
+      [ BiomeId.BEACH, BiomePoolTier.RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.RARE ]
     ]
     ],
     [ SpeciesId.ANNIHILAPE, PokemonType.FIGHTING, PokemonType.GHOST, [
@@ -7145,6 +7238,7 @@ export function initBiomes() {
       [ BiomeId.TALL_GRASS, BiomePoolTier.UNCOMMON ],
       [ BiomeId.SWAMP, BiomePoolTier.UNCOMMON ],
       [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ],
       [ BiomeId.LAKE, BiomePoolTier.UNCOMMON ],
       [ BiomeId.MOUNTAIN, BiomePoolTier.UNCOMMON ],
       [ BiomeId.BADLANDS, BiomePoolTier.UNCOMMON ],
@@ -7190,6 +7284,7 @@ export function initBiomes() {
       [ BiomeId.GRASS, BiomePoolTier.RARE ],
       [ BiomeId.SWAMP, BiomePoolTier.RARE ],
       [ BiomeId.BEACH, BiomePoolTier.RARE ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.RARE ],
       [ BiomeId.LAKE, BiomePoolTier.RARE ],
       [ BiomeId.MOUNTAIN, BiomePoolTier.COMMON ],
       [ BiomeId.CAVE, BiomePoolTier.UNCOMMON ],
@@ -7202,6 +7297,7 @@ export function initBiomes() {
       [ BiomeId.TALL_GRASS, BiomePoolTier.UNCOMMON ],
       [ BiomeId.METROPOLIS, BiomePoolTier.UNCOMMON ],
       [ BiomeId.BEACH, BiomePoolTier.UNCOMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.UNCOMMON ],
       [ BiomeId.LAKE, BiomePoolTier.COMMON ],
       [ BiomeId.MEADOW, BiomePoolTier.UNCOMMON ],
       [ BiomeId.FAIRY_CAVE, BiomePoolTier.UNCOMMON ]
@@ -7228,7 +7324,8 @@ export function initBiomes() {
     ],
     [ TrainerType.FISHERMAN, [
       [ BiomeId.LAKE, BiomePoolTier.COMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ TrainerType.GUITARIST, [
@@ -7310,7 +7407,8 @@ export function initBiomes() {
     ],
     [ TrainerType.SAILOR, [
       [ BiomeId.SEA, BiomePoolTier.COMMON ],
-      [ BiomeId.BEACH, BiomePoolTier.COMMON ]
+      [ BiomeId.BEACH, BiomePoolTier.COMMON ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.COMMON ]
     ]
     ],
     [ TrainerType.SCIENTIST, [
@@ -7360,7 +7458,8 @@ export function initBiomes() {
     ]
     ],
     [ TrainerType.MISTY, [
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ TrainerType.LT_SURGE, [
@@ -7632,7 +7731,8 @@ export function initBiomes() {
     ]
     ],
     [ TrainerType.KOFU, [
-      [ BiomeId.BEACH, BiomePoolTier.BOSS ]
+      [ BiomeId.BEACH, BiomePoolTier.BOSS ],
+      [ BiomeId.ROCKY_COAST, BiomePoolTier.BOSS ]
     ]
     ],
     [ TrainerType.LARRY, [
