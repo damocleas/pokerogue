@@ -71,6 +71,7 @@ export const NON_EXTREME_ENCOUNTER_BIOMES = [
   BiomeId.TEMPLE,
   BiomeId.SLUM,
   BiomeId.SNOWY_FOREST,
+  BiomeId.ROCKY_COAST,
   BiomeId.ISLAND,
   BiomeId.LABORATORY,
 ];
@@ -110,6 +111,7 @@ export const HUMAN_TRANSITABLE_BIOMES = [
   BiomeId.TEMPLE,
   BiomeId.SLUM,
   BiomeId.SNOWY_FOREST,
+  BiomeId.ROCKY_COAST,
   BiomeId.ISLAND,
   BiomeId.LABORATORY,
 ];
@@ -132,6 +134,7 @@ export const CIVILIZATION_ENCOUNTER_BIOMES = [
   BiomeId.FACTORY,
   BiomeId.CONSTRUCTION_SITE,
   BiomeId.SLUM,
+  BiomeId.ROCKY_COAST,
   BiomeId.ISLAND,
 ];
 
@@ -221,6 +224,7 @@ export const mysteryEncountersByBiome = new Map<BiomeId, MysteryEncounterType[]>
   [BiomeId.TEMPLE, []],
   [BiomeId.SLUM, []],
   [BiomeId.SNOWY_FOREST, []],
+  [BiomeId.ROCKY_COAST, []],
   [BiomeId.ISLAND, []],
   [BiomeId.LABORATORY, []],
 ]);
