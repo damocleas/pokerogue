@@ -243,6 +243,7 @@ export class Arena {
       case SpeciesId.WORMADAM:
         switch (this.biomeType) {
           case BiomeId.BEACH:
+          case BiomeId.ROCKY_COAST:
             return 1;
           case BiomeId.SLUM:
             return 2;
@@ -535,6 +536,7 @@ export class Arena {
       case BiomeId.WASTELAND:
       case BiomeId.JUNGLE:
       case BiomeId.FAIRY_CAVE:
+      case BiomeId.ROCKY_COAST:
         return 12;
       case BiomeId.SEABED:
       case BiomeId.ABYSS:
@@ -922,6 +924,8 @@ export class Arena {
         return 0.0;
       case BiomeId.SNOWY_FOREST:
         return 3.047;
+      case BiomeId.ROCKY_COAST:
+        return 0.0;
       case BiomeId.END:
         return 17.153;
       default:
@@ -963,6 +967,7 @@ export function getBiomeHasProps(biomeType: BiomeId): boolean {
     case BiomeId.FAIRY_CAVE:
     case BiomeId.TEMPLE:
     case BiomeId.SNOWY_FOREST:
+    case BiomeId.ROCKY_COAST:
     case BiomeId.ISLAND:
     case BiomeId.LABORATORY:
     case BiomeId.END:
