@@ -338,7 +338,7 @@ export function getRandomWeatherType(arena: Arena): WeatherType {
         { weatherType: WeatherType.FOG, weight: 1 },
       ];
       break;
-    case BiomeId.LAKE:
+    case BiomeId.ROCKY_COAST:
       weatherPool = [
         { weatherType: WeatherType.NONE, weight: 9 },
         { weatherType: WeatherType.RAIN, weight: 4 },
