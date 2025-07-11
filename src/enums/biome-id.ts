@@ -32,6 +32,7 @@ export enum BiomeId {
   TEMPLE,
   SLUM,
   SNOWY_FOREST,
+  UNDERGROUND_WELL,
   ROCKY_COAST,
   ISLAND = 40,
   LABORATORY,

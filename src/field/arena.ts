@@ -530,13 +530,15 @@ export class Arena {
       case BiomeId.WASTELAND:
       case BiomeId.JUNGLE:
       case BiomeId.FAIRY_CAVE:
-      case BiomeId.ROCKY_COAST:
-        return 12;
       case BiomeId.SEABED:
       case BiomeId.ABYSS:
       case BiomeId.SPACE:
       case BiomeId.TEMPLE:
         return 16;
+      case BiomeId.UNDERGROUND_WELL:
+        return 8;
+      case BiomeId.ROCKY_COAST:
+        return 12;
       default:
         return 0;
     }
@@ -576,6 +578,7 @@ export class Arena {
       case BiomeId.ABYSS:
       case BiomeId.FAIRY_CAVE:
       case BiomeId.TEMPLE:
+      case BiomeId.UNDERGROUND_WELL:
       case BiomeId.LABORATORY:
         return false;
       default:
@@ -918,6 +921,8 @@ export class Arena {
         return 0.0;
       case BiomeId.SNOWY_FOREST:
         return 3.047;
+      case BiomeId.UNDERGROUND_WELL:
+        return 0.0;
       case BiomeId.ROCKY_COAST:
         return 0.0;
       case BiomeId.END:
@@ -961,6 +966,7 @@ export function getBiomeHasProps(biomeType: BiomeId): boolean {
     case BiomeId.FAIRY_CAVE:
     case BiomeId.TEMPLE:
     case BiomeId.SNOWY_FOREST:
+    case BiomeId.UNDERGROUND_WELL:
     case BiomeId.ROCKY_COAST:
     case BiomeId.ISLAND:
     case BiomeId.LABORATORY:

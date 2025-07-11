@@ -66,6 +66,7 @@ export const biomeLinks: BiomeLinks = {
   [BiomeId.TEMPLE]: [ BiomeId.DESERT, [ BiomeId.SWAMP, 2 ], [ BiomeId.RUINS, 2 ]],
   [BiomeId.METROPOLIS]: BiomeId.SLUM,
   [BiomeId.SNOWY_FOREST]: [ BiomeId.FOREST, [ BiomeId.MOUNTAIN, 2 ], [ BiomeId.LAKE, 2 ]],
+  [BiomeId.UNDERGROUND_WELL]: BiomeId.UNDERGROUND_WELL,
   [BiomeId.ROCKY_COAST]: BiomeId.ROCKY_COAST,
   [BiomeId.ISLAND]: BiomeId.SEA,
   [BiomeId.LABORATORY]: BiomeId.CONSTRUCTION_SITE
